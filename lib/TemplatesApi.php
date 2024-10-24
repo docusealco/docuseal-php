@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Docuseal\Api;
+namespace Docuseal\Docuseal;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;

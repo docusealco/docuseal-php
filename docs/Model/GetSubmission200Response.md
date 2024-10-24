@@ -5,9 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Submission unique ID number. | [optional]
+**slug** | **string** | Unique slug of the submission. | [optional]
 **source** | **string** | The source of the submission. | [optional]
 **submitters_order** | **string** | The order of submitters. | [optional]
 **audit_log_url** | **string** | Audit log file URL. | [optional]
+**combined_document_url** | **string** | Combined PDF file URL with documents and Audit Log. | [optional]
 **created_at** | **string** | The date and time when the submission was created. | [optional]
 **updated_at** | **string** | The date and time when the submission was last updated. | [optional]
 **archived_at** | **string** | The date and time when the submission was archived. | [optional]
@@ -17,6 +19,7 @@ Name | Type | Description | Notes
 **submission_events** | [**\Docuseal\Model\GetSubmission200ResponseSubmissionEventsInner[]**](GetSubmission200ResponseSubmissionEventsInner.md) |  | [optional]
 **documents** | [**\Docuseal\Model\GetSubmission200ResponseSubmittersInnerDocumentsInner[]**](GetSubmission200ResponseSubmittersInnerDocumentsInner.md) |  | [optional]
 **status** | **string** | The status of the submission. | [optional]
+**metadata** | **object** | Object with custom metadata. | [optional]
 **completed_at** | **string** | The date and time when the submission was fully completed. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

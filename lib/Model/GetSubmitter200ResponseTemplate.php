@@ -1,6 +1,6 @@
 <?php
 /**
- * ArchiveTemplate200Response
+ * GetSubmitter200ResponseTemplate
  *
  * PHP version 7.4
  *
@@ -33,15 +33,16 @@ use \ArrayAccess;
 use \Docuseal\ObjectSerializer;
 
 /**
- * ArchiveTemplate200Response Class Doc Comment
+ * GetSubmitter200ResponseTemplate Class Doc Comment
  *
  * @category Class
+ * @description Base template details.
  * @package  Docuseal
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetSubmitter200ResponseTemplate implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +51,7 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
       *
       * @var string
       */
-    protected static $openAPIModelName = 'archiveTemplate_200_response';
+    protected static $openAPIModelName = 'getSubmitter_200_response_template';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +59,10 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'archived_at' => 'string'
+        'id' => 'float',
+        'name' => 'string',
+        'created_at' => '\DateTime',
+        'updated_at' => '\DateTime'
     ];
 
     /**
@@ -71,7 +74,9 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'archived_at' => null
+        'name' => null,
+        'created_at' => 'date-time',
+        'updated_at' => 'date-time'
     ];
 
     /**
@@ -81,7 +86,9 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static array $openAPINullables = [
         'id' => false,
-        'archived_at' => false
+        'name' => false,
+        'created_at' => false,
+        'updated_at' => false
     ];
 
     /**
@@ -171,7 +178,9 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'archived_at' => 'archived_at'
+        'name' => 'name',
+        'created_at' => 'created_at',
+        'updated_at' => 'updated_at'
     ];
 
     /**
@@ -181,7 +190,9 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static $setters = [
         'id' => 'setId',
-        'archived_at' => 'setArchivedAt'
+        'name' => 'setName',
+        'created_at' => 'setCreatedAt',
+        'updated_at' => 'setUpdatedAt'
     ];
 
     /**
@@ -191,7 +202,9 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static $getters = [
         'id' => 'getId',
-        'archived_at' => 'getArchivedAt'
+        'name' => 'getName',
+        'created_at' => 'getCreatedAt',
+        'updated_at' => 'getUpdatedAt'
     ];
 
     /**
@@ -252,7 +265,9 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('archived_at', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('updated_at', $data ?? [], null);
     }
 
     /**
@@ -300,7 +315,7 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets id
      *
-     * @return int|null
+     * @return float|null
      */
     public function getId()
     {
@@ -310,7 +325,7 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets id
      *
-     * @param int|null $id Template unique ID number.
+     * @param float|null $id The template's unique identifier.
      *
      * @return self
      */
@@ -325,28 +340,82 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets archived_at
+     * Gets name
      *
      * @return string|null
      */
-    public function getArchivedAt()
+    public function getName()
     {
-        return $this->container['archived_at'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets archived_at
+     * Sets name
      *
-     * @param string|null $archived_at Date and time when the template was archived.
+     * @param string|null $name The template's name.
      *
      * @return self
      */
-    public function setArchivedAt($archived_at)
+    public function setName($name)
     {
-        if (is_null($archived_at)) {
-            throw new \InvalidArgumentException('non-nullable archived_at cannot be null');
+        if (is_null($name)) {
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
-        $this->container['archived_at'] = $archived_at;
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_at
+     *
+     * @return \DateTime|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['created_at'];
+    }
+
+    /**
+     * Sets created_at
+     *
+     * @param \DateTime|null $created_at created_at
+     *
+     * @return self
+     */
+    public function setCreatedAt($created_at)
+    {
+        if (is_null($created_at)) {
+            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
+        }
+        $this->container['created_at'] = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated_at
+     *
+     * @return \DateTime|null
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updated_at'];
+    }
+
+    /**
+     * Sets updated_at
+     *
+     * @param \DateTime|null $updated_at updated_at
+     *
+     * @return self
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        if (is_null($updated_at)) {
+            throw new \InvalidArgumentException('non-nullable updated_at cannot be null');
+        }
+        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }

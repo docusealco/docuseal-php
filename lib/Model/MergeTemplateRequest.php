@@ -1,6 +1,6 @@
 <?php
 /**
- * ArchiveTemplate200Response
+ * MergeTemplateRequest
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Docuseal\ObjectSerializer;
 
 /**
- * ArchiveTemplate200Response Class Doc Comment
+ * MergeTemplateRequest Class Doc Comment
  *
  * @category Class
  * @package  Docuseal
@@ -41,7 +41,7 @@ use \Docuseal\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class MergeTemplateRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
       *
       * @var string
       */
-    protected static $openAPIModelName = 'archiveTemplate_200_response';
+    protected static $openAPIModelName = 'mergeTemplate_request';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,10 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'archived_at' => 'string'
+        'template_ids' => 'int[]',
+        'name' => 'string',
+        'folder_name' => 'string',
+        'external_id' => 'string'
     ];
 
     /**
@@ -70,8 +72,10 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'archived_at' => null
+        'template_ids' => null,
+        'name' => null,
+        'folder_name' => null,
+        'external_id' => null
     ];
 
     /**
@@ -80,8 +84,10 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-        'archived_at' => false
+        'template_ids' => false,
+        'name' => false,
+        'folder_name' => false,
+        'external_id' => false
     ];
 
     /**
@@ -170,8 +176,10 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'archived_at' => 'archived_at'
+        'template_ids' => 'template_ids',
+        'name' => 'name',
+        'folder_name' => 'folder_name',
+        'external_id' => 'external_id'
     ];
 
     /**
@@ -180,8 +188,10 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'archived_at' => 'setArchivedAt'
+        'template_ids' => 'setTemplateIds',
+        'name' => 'setName',
+        'folder_name' => 'setFolderName',
+        'external_id' => 'setExternalId'
     ];
 
     /**
@@ -190,8 +200,10 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'archived_at' => 'getArchivedAt'
+        'template_ids' => 'getTemplateIds',
+        'name' => 'getName',
+        'folder_name' => 'getFolderName',
+        'external_id' => 'getExternalId'
     ];
 
     /**
@@ -251,8 +263,10 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('archived_at', $data ?? [], null);
+        $this->setIfExists('template_ids', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('folder_name', $data ?? [], null);
+        $this->setIfExists('external_id', $data ?? [], null);
     }
 
     /**
@@ -282,6 +296,9 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
+        if ($this->container['template_ids'] === null) {
+            $invalidProperties[] = "'template_ids' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -298,55 +315,109 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
-     * Gets id
+     * Gets template_ids
      *
-     * @return int|null
+     * @return int[]
      */
-    public function getId()
+    public function getTemplateIds()
     {
-        return $this->container['id'];
+        return $this->container['template_ids'];
     }
 
     /**
-     * Sets id
+     * Sets template_ids
      *
-     * @param int|null $id Template unique ID number.
+     * @param int[] $template_ids An array of template ids to merge into a new template.
      *
      * @return self
      */
-    public function setId($id)
+    public function setTemplateIds($template_ids)
     {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        if (is_null($template_ids)) {
+            throw new \InvalidArgumentException('non-nullable template_ids cannot be null');
         }
-        $this->container['id'] = $id;
+        $this->container['template_ids'] = $template_ids;
 
         return $this;
     }
 
     /**
-     * Gets archived_at
+     * Gets name
      *
      * @return string|null
      */
-    public function getArchivedAt()
+    public function getName()
     {
-        return $this->container['archived_at'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets archived_at
+     * Sets name
      *
-     * @param string|null $archived_at Date and time when the template was archived.
+     * @param string|null $name Template name. Existing name with (Merged) suffix will be used if not specified.
      *
      * @return self
      */
-    public function setArchivedAt($archived_at)
+    public function setName($name)
     {
-        if (is_null($archived_at)) {
-            throw new \InvalidArgumentException('non-nullable archived_at cannot be null');
+        if (is_null($name)) {
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
-        $this->container['archived_at'] = $archived_at;
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets folder_name
+     *
+     * @return string|null
+     */
+    public function getFolderName()
+    {
+        return $this->container['folder_name'];
+    }
+
+    /**
+     * Sets folder_name
+     *
+     * @param string|null $folder_name The name of the folder in which the merged template should be placed.
+     *
+     * @return self
+     */
+    public function setFolderName($folder_name)
+    {
+        if (is_null($folder_name)) {
+            throw new \InvalidArgumentException('non-nullable folder_name cannot be null');
+        }
+        $this->container['folder_name'] = $folder_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_id
+     *
+     * @return string|null
+     */
+    public function getExternalId()
+    {
+        return $this->container['external_id'];
+    }
+
+    /**
+     * Sets external_id
+     *
+     * @param string|null $external_id Your application-specific unique string key to identify this template within your app.
+     *
+     * @return self
+     */
+    public function setExternalId($external_id)
+    {
+        if (is_null($external_id)) {
+            throw new \InvalidArgumentException('non-nullable external_id cannot be null');
+        }
+        $this->container['external_id'] = $external_id;
 
         return $this;
     }

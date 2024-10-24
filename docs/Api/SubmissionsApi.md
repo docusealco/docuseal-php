@@ -1,6 +1,6 @@
 # Docuseal\SubmissionsApi
 
-All URIs are relative to https://api.docuseal.co, except if the operation defines another base path.
+All URIs are relative to https://api.docuseal.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -19,7 +19,7 @@ archiveSubmission($id): \Docuseal\Model\ArchiveSubmission200Response
 
 Archive a submission
 
-The API endpoint allows to archive a submission.
+The API endpoint allows you to archive a submission.
 
 ### Example
 
@@ -262,7 +262,7 @@ try {
 ## `getSubmissions()`
 
 ```php
-getSubmissions($template_id, $q, $external_id, $template_folder, $limit, $before, $after): \Docuseal\Model\GetSubmissions200Response
+getSubmissions($template_id, $q, $template_folder, $limit, $after, $before): \Docuseal\Model\GetSubmissions200Response
 ```
 
 List all submissions
@@ -288,16 +288,15 @@ $apiInstance = new Docuseal\Api\SubmissionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$template_id = 56; // int | The unique identifier of the document template. Allows to receive only submissions for a specific template.
+$template_id = 56; // int | The template ID allows you to receive only the submissions created from that specific template.
 $q = 'q_example'; // string | Filter submissions based on submitters name, email or phone partial match.
-$external_id = 'external_id_example'; // string | Filter submissions by the given `external_id` value.
 $template_folder = 'template_folder_example'; // string | Filter submissions by template folder name.
 $limit = 56; // int | The number of submissions to return. Default value is 10. Maximum value is 100.
-$before = 56; // int | The unique identifier of the submission to end the list with. Allows to receive only submissions with id less than the specified value.
-$after = 56; // int | The unique identifier of the submission to start the list from. Allows to receive only submissions with id greater than the specified value.
+$after = 56; // int | The unique identifier of the submission to start the list from. It allows you to receive only submissions with an ID greater than the specified value. Pass ID value from the `pagination.next` response to load the next batch of submissions.
+$before = 56; // int | The unique identifier of the submission that marks the end of the list. It allows you to receive only submissions with an ID less than the specified value.
 
 try {
-    $result = $apiInstance->getSubmissions($template_id, $q, $external_id, $template_folder, $limit, $before, $after);
+    $result = $apiInstance->getSubmissions($template_id, $q, $template_folder, $limit, $after, $before);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubmissionsApi->getSubmissions: ', $e->getMessage(), PHP_EOL;
@@ -308,13 +307,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **template_id** | **int**| The unique identifier of the document template. Allows to receive only submissions for a specific template. | [optional] |
+| **template_id** | **int**| The template ID allows you to receive only the submissions created from that specific template. | [optional] |
 | **q** | **string**| Filter submissions based on submitters name, email or phone partial match. | [optional] |
-| **external_id** | **string**| Filter submissions by the given &#x60;external_id&#x60; value. | [optional] |
 | **template_folder** | **string**| Filter submissions by template folder name. | [optional] |
 | **limit** | **int**| The number of submissions to return. Default value is 10. Maximum value is 100. | [optional] |
-| **before** | **int**| The unique identifier of the submission to end the list with. Allows to receive only submissions with id less than the specified value. | [optional] |
-| **after** | **int**| The unique identifier of the submission to start the list from. Allows to receive only submissions with id greater than the specified value. | [optional] |
+| **after** | **int**| The unique identifier of the submission to start the list from. It allows you to receive only submissions with an ID greater than the specified value. Pass ID value from the &#x60;pagination.next&#x60; response to load the next batch of submissions. | [optional] |
+| **before** | **int**| The unique identifier of the submission that marks the end of the list. It allows you to receive only submissions with an ID less than the specified value. | [optional] |
 
 ### Return type
 

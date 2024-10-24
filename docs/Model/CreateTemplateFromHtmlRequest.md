@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **html** | **string** | HTML template with field tags. |
+**html_header** | **string** | HTML template of the header to be displayed on every page. | [optional]
+**html_footer** | **string** | HTML template of the footer to be displayed on every page. | [optional]
 **name** | **string** | Template name. Random uuid will be assigned when not specified. | [optional]
 **size** | **string** | Page size. Letter 8.5 x 11 will be assigned when not specified. | [optional] [default to 'Letter']
 **external_id** | **string** | Your application-specific unique string key to identify this template within your app. Existing template with specified &#x60;external_id&#x60; will be updated with a new HTML. | [optional]

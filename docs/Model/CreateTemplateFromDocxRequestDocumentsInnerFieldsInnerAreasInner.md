@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **y** | **float** | Y-coordinate of the field area | [optional]
 **w** | **float** | Width of the field area | [optional]
 **h** | **float** | Height of the field area | [optional]
-**page** | **int** | Page number of the field area | [optional]
+**page** | **int** | Page number of the field area. Starts from 1. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **sent_at** | **string** | The date and time when the signing request was sent to the submitter. | [optional]
 **opened_at** | **string** | The date and time when the submitter opened the signing form. | [optional]
 **completed_at** | **string** | The date and time when the submitter completed the signing form. | [optional]
+**declined_at** | **string** | The date and time when the submitter declined the signing form. | [optional]
 **created_at** | **string** | The date and time when the submitter was created. | [optional]
 **updated_at** | **string** | The date and time when the submitter was last updated. | [optional]
 **name** | **string** | The name of the submitter. | [optional]

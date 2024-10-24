@@ -1,6 +1,6 @@
 <?php
 /**
- * ArchiveTemplate200Response
+ * UpdateSubmitterRequestFieldsInner
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Docuseal\ObjectSerializer;
 
 /**
- * ArchiveTemplate200Response Class Doc Comment
+ * UpdateSubmitterRequestFieldsInner Class Doc Comment
  *
  * @category Class
  * @package  Docuseal
@@ -41,7 +41,7 @@ use \Docuseal\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdateSubmitterRequestFieldsInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
       *
       * @var string
       */
-    protected static $openAPIModelName = 'archiveTemplate_200_response';
+    protected static $openAPIModelName = 'updateSubmitter_request_fields_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,11 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'archived_at' => 'string'
+        'name' => 'string',
+        'default_value' => 'string',
+        'validation_pattern' => 'string',
+        'invalid_message' => 'string',
+        'readonly' => 'bool'
     ];
 
     /**
@@ -70,8 +73,11 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'archived_at' => null
+        'name' => null,
+        'default_value' => null,
+        'validation_pattern' => null,
+        'invalid_message' => null,
+        'readonly' => null
     ];
 
     /**
@@ -80,8 +86,11 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-        'archived_at' => false
+        'name' => false,
+        'default_value' => false,
+        'validation_pattern' => false,
+        'invalid_message' => false,
+        'readonly' => false
     ];
 
     /**
@@ -170,8 +179,11 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'archived_at' => 'archived_at'
+        'name' => 'name',
+        'default_value' => 'default_value',
+        'validation_pattern' => 'validation_pattern',
+        'invalid_message' => 'invalid_message',
+        'readonly' => 'readonly'
     ];
 
     /**
@@ -180,8 +192,11 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'archived_at' => 'setArchivedAt'
+        'name' => 'setName',
+        'default_value' => 'setDefaultValue',
+        'validation_pattern' => 'setValidationPattern',
+        'invalid_message' => 'setInvalidMessage',
+        'readonly' => 'setReadonly'
     ];
 
     /**
@@ -190,8 +205,11 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'archived_at' => 'getArchivedAt'
+        'name' => 'getName',
+        'default_value' => 'getDefaultValue',
+        'validation_pattern' => 'getValidationPattern',
+        'invalid_message' => 'getInvalidMessage',
+        'readonly' => 'getReadonly'
     ];
 
     /**
@@ -251,8 +269,11 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('archived_at', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('default_value', $data ?? [], null);
+        $this->setIfExists('validation_pattern', $data ?? [], null);
+        $this->setIfExists('invalid_message', $data ?? [], null);
+        $this->setIfExists('readonly', $data ?? [], false);
     }
 
     /**
@@ -282,6 +303,9 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -298,55 +322,136 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
-     * Gets id
+     * Gets name
      *
-     * @return int|null
+     * @return string
      */
-    public function getId()
+    public function getName()
     {
-        return $this->container['id'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets id
+     * Sets name
      *
-     * @param int|null $id Template unique ID number.
+     * @param string $name Document template field name
      *
      * @return self
      */
-    public function setId($id)
+    public function setName($name)
     {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        if (is_null($name)) {
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
-        $this->container['id'] = $id;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets archived_at
+     * Gets default_value
      *
      * @return string|null
      */
-    public function getArchivedAt()
+    public function getDefaultValue()
     {
-        return $this->container['archived_at'];
+        return $this->container['default_value'];
     }
 
     /**
-     * Sets archived_at
+     * Sets default_value
      *
-     * @param string|null $archived_at Date and time when the template was archived.
+     * @param string|null $default_value Default value of the field. Use base64 encoded file or a public URL to the image file to set default signature or image fields.
      *
      * @return self
      */
-    public function setArchivedAt($archived_at)
+    public function setDefaultValue($default_value)
     {
-        if (is_null($archived_at)) {
-            throw new \InvalidArgumentException('non-nullable archived_at cannot be null');
+        if (is_null($default_value)) {
+            throw new \InvalidArgumentException('non-nullable default_value cannot be null');
         }
-        $this->container['archived_at'] = $archived_at;
+        $this->container['default_value'] = $default_value;
+
+        return $this;
+    }
+
+    /**
+     * Gets validation_pattern
+     *
+     * @return string|null
+     */
+    public function getValidationPattern()
+    {
+        return $this->container['validation_pattern'];
+    }
+
+    /**
+     * Sets validation_pattern
+     *
+     * @param string|null $validation_pattern HTML field validation pattern string based on https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern specification.
+     *
+     * @return self
+     */
+    public function setValidationPattern($validation_pattern)
+    {
+        if (is_null($validation_pattern)) {
+            throw new \InvalidArgumentException('non-nullable validation_pattern cannot be null');
+        }
+        $this->container['validation_pattern'] = $validation_pattern;
+
+        return $this;
+    }
+
+    /**
+     * Gets invalid_message
+     *
+     * @return string|null
+     */
+    public function getInvalidMessage()
+    {
+        return $this->container['invalid_message'];
+    }
+
+    /**
+     * Sets invalid_message
+     *
+     * @param string|null $invalid_message A custom message to display on pattern validation failure.
+     *
+     * @return self
+     */
+    public function setInvalidMessage($invalid_message)
+    {
+        if (is_null($invalid_message)) {
+            throw new \InvalidArgumentException('non-nullable invalid_message cannot be null');
+        }
+        $this->container['invalid_message'] = $invalid_message;
+
+        return $this;
+    }
+
+    /**
+     * Gets readonly
+     *
+     * @return bool|null
+     */
+    public function getReadonly()
+    {
+        return $this->container['readonly'];
+    }
+
+    /**
+     * Sets readonly
+     *
+     * @param bool|null $readonly Set `true` to make it impossible for the submitter to edit predefined field value.
+     *
+     * @return self
+     */
+    public function setReadonly($readonly)
+    {
+        if (is_null($readonly)) {
+            throw new \InvalidArgumentException('non-nullable readonly cannot be null');
+        }
+        $this->container['readonly'] = $readonly;
 
         return $this;
     }

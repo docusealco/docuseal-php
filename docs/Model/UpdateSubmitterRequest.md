@@ -11,8 +11,10 @@ Name | Type | Description | Notes
 **external_id** | **string** | Your application-specific unique string key to identify this submitter within your app. | [optional]
 **send_email** | **bool** | Set &#x60;true&#x60; to re-send signature request emails. | [optional]
 **send_sms** | **bool** | Set &#x60;true&#x60; to re-send signature request via phone number SMS. | [optional] [default to false]
+**reply_to** | **string** | Specify Reply-To address to use in the notification emails. | [optional]
+**completed_redirect_url** | **string** | Submitter specific URL to redirect to after the submission completion. | [optional]
 **completed** | **bool** | Pass &#x60;true&#x60; to mark submitter as completed and auto-signed via API. | [optional]
 **message** | [**\Docuseal\Model\CreateSubmissionRequestMessage**](CreateSubmissionRequestMessage.md) |  | [optional]
-**fields** | [**\Docuseal\Model\CreateSubmissionRequestSubmittersInnerFieldsInner[]**](CreateSubmissionRequestSubmittersInnerFieldsInner.md) | A list of configurations for template document form fields. | [optional]
+**fields** | [**\Docuseal\Model\UpdateSubmitterRequestFieldsInner[]**](UpdateSubmitterRequestFieldsInner.md) | A list of configurations for template document form fields. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

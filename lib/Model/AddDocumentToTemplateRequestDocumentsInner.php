@@ -1,6 +1,6 @@
 <?php
 /**
- * ArchiveTemplate200Response
+ * AddDocumentToTemplateRequestDocumentsInner
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Docuseal\ObjectSerializer;
 
 /**
- * ArchiveTemplate200Response Class Doc Comment
+ * AddDocumentToTemplateRequestDocumentsInner Class Doc Comment
  *
  * @category Class
  * @package  Docuseal
@@ -41,7 +41,7 @@ use \Docuseal\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class AddDocumentToTemplateRequestDocumentsInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
       *
       * @var string
       */
-    protected static $openAPIModelName = 'archiveTemplate_200_response';
+    protected static $openAPIModelName = 'addDocumentToTemplate_request_documents_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,12 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'archived_at' => 'string'
+        'name' => 'string',
+        'file' => 'string',
+        'html' => 'string',
+        'position' => 'int',
+        'replace' => 'bool',
+        'remove' => 'bool'
     ];
 
     /**
@@ -70,8 +74,12 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'archived_at' => null
+        'name' => null,
+        'file' => 'base64',
+        'html' => null,
+        'position' => null,
+        'replace' => null,
+        'remove' => null
     ];
 
     /**
@@ -80,8 +88,12 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-        'archived_at' => false
+        'name' => false,
+        'file' => false,
+        'html' => false,
+        'position' => false,
+        'replace' => false,
+        'remove' => false
     ];
 
     /**
@@ -170,8 +182,12 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'archived_at' => 'archived_at'
+        'name' => 'name',
+        'file' => 'file',
+        'html' => 'html',
+        'position' => 'position',
+        'replace' => 'replace',
+        'remove' => 'remove'
     ];
 
     /**
@@ -180,8 +196,12 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'archived_at' => 'setArchivedAt'
+        'name' => 'setName',
+        'file' => 'setFile',
+        'html' => 'setHtml',
+        'position' => 'setPosition',
+        'replace' => 'setReplace',
+        'remove' => 'setRemove'
     ];
 
     /**
@@ -190,8 +210,12 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'archived_at' => 'getArchivedAt'
+        'name' => 'getName',
+        'file' => 'getFile',
+        'html' => 'getHtml',
+        'position' => 'getPosition',
+        'replace' => 'getReplace',
+        'remove' => 'getRemove'
     ];
 
     /**
@@ -251,8 +275,12 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('archived_at', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('file', $data ?? [], null);
+        $this->setIfExists('html', $data ?? [], null);
+        $this->setIfExists('position', $data ?? [], null);
+        $this->setIfExists('replace', $data ?? [], false);
+        $this->setIfExists('remove', $data ?? [], false);
     }
 
     /**
@@ -298,55 +326,163 @@ class ArchiveTemplate200Response implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
-     * Gets id
+     * Gets name
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getId()
+    public function getName()
     {
-        return $this->container['id'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets id
+     * Sets name
      *
-     * @param int|null $id Template unique ID number.
+     * @param string|null $name Document name. Random uuid will be assigned when not specified.
      *
      * @return self
      */
-    public function setId($id)
+    public function setName($name)
     {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        if (is_null($name)) {
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
-        $this->container['id'] = $id;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets archived_at
+     * Gets file
      *
      * @return string|null
      */
-    public function getArchivedAt()
+    public function getFile()
     {
-        return $this->container['archived_at'];
+        return $this->container['file'];
     }
 
     /**
-     * Sets archived_at
+     * Sets file
      *
-     * @param string|null $archived_at Date and time when the template was archived.
+     * @param string|null $file Base64-encoded content of the PDF or DOCX file or downloadable file URL. Leave it empty if you create a new document using HTML param.
      *
      * @return self
      */
-    public function setArchivedAt($archived_at)
+    public function setFile($file)
     {
-        if (is_null($archived_at)) {
-            throw new \InvalidArgumentException('non-nullable archived_at cannot be null');
+        if (is_null($file)) {
+            throw new \InvalidArgumentException('non-nullable file cannot be null');
         }
-        $this->container['archived_at'] = $archived_at;
+        $this->container['file'] = $file;
+
+        return $this;
+    }
+
+    /**
+     * Gets html
+     *
+     * @return string|null
+     */
+    public function getHtml()
+    {
+        return $this->container['html'];
+    }
+
+    /**
+     * Sets html
+     *
+     * @param string|null $html HTML template with field tags. Leave it empty if you add a document via PDF or DOCX base64 encoded file param or URL.
+     *
+     * @return self
+     */
+    public function setHtml($html)
+    {
+        if (is_null($html)) {
+            throw new \InvalidArgumentException('non-nullable html cannot be null');
+        }
+        $this->container['html'] = $html;
+
+        return $this;
+    }
+
+    /**
+     * Gets position
+     *
+     * @return int|null
+     */
+    public function getPosition()
+    {
+        return $this->container['position'];
+    }
+
+    /**
+     * Sets position
+     *
+     * @param int|null $position Position of the document. By default will be added as the last document in the template.
+     *
+     * @return self
+     */
+    public function setPosition($position)
+    {
+        if (is_null($position)) {
+            throw new \InvalidArgumentException('non-nullable position cannot be null');
+        }
+        $this->container['position'] = $position;
+
+        return $this;
+    }
+
+    /**
+     * Gets replace
+     *
+     * @return bool|null
+     */
+    public function getReplace()
+    {
+        return $this->container['replace'];
+    }
+
+    /**
+     * Sets replace
+     *
+     * @param bool|null $replace Set to `true` to replace existing document with a new file at `position`. Existing document fields will be transferred to the new document if it doesn't contain any fields
+     *
+     * @return self
+     */
+    public function setReplace($replace)
+    {
+        if (is_null($replace)) {
+            throw new \InvalidArgumentException('non-nullable replace cannot be null');
+        }
+        $this->container['replace'] = $replace;
+
+        return $this;
+    }
+
+    /**
+     * Gets remove
+     *
+     * @return bool|null
+     */
+    public function getRemove()
+    {
+        return $this->container['remove'];
+    }
+
+    /**
+     * Sets remove
+     *
+     * @param bool|null $remove Set to `true` to remove existing document at given `position` or with given `name`.
+     *
+     * @return self
+     */
+    public function setRemove($remove)
+    {
+        if (is_null($remove)) {
+            throw new \InvalidArgumentException('non-nullable remove cannot be null');
+        }
+        $this->container['remove'] = $remove;
 
         return $this;
     }

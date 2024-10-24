@@ -1,6 +1,6 @@
 # Docuseal\SubmittersApi
 
-All URIs are relative to https://api.docuseal.co, except if the operation defines another base path.
+All URIs are relative to https://api.docuseal.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -74,7 +74,7 @@ try {
 ## `getSubmitters()`
 
 ```php
-getSubmitters($submission_id, $q, $external_id, $limit, $before, $after): \Docuseal\Model\GetSubmitters200Response
+getSubmitters($submission_id, $q, $completed_after, $completed_before, $external_id, $limit, $after, $before): \Docuseal\Model\GetSubmitters200Response
 ```
 
 List all submitters
@@ -100,15 +100,17 @@ $apiInstance = new Docuseal\Api\SubmittersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$submission_id = 56; // int | The unique identifier of the submission. Allows to receive only submitters for a submission.
+$submission_id = 56; // int | The submission ID allows you to receive only the submitters related to that specific submission.
 $q = 'q_example'; // string | Filter submitters on name, email or phone partial match.
-$external_id = 'external_id_example'; // string | The unique applications-specific identifier provided for a submitter when initializing a signature request. Allows to receive only submitters with a specified external id.
+$completed_after = 2024-03-05 9:32:20; // \DateTime | The date and time string value to filter submitters that completed the submission after the specified date and time.
+$completed_before = 2024-03-06 19:32:20; // \DateTime | The date and time string value to filter submitters that completed the submission before the specified date and time.
+$external_id = 'external_id_example'; // string | The unique applications-specific identifier provided for a submitter when initializing a signature request. It allows you to receive only submitters with a specified external id.
 $limit = 56; // int | The number of submitters to return. Default value is 10. Maximum value is 100.
-$before = 56; // int | The unique identifier of the submitter to end the list with. Allows to receive only submitters with id less than the specified value.
-$after = 56; // int | The unique identifier of the submitter to start the list from. Allows to receive only submitters with id greater than the specified value.
+$after = 56; // int | The unique identifier of the submitter to start the list from. It allows you to receive only submitters with id greater than the specified value. Pass ID value from the `pagination.next` response to load the next batch of submitters.
+$before = 56; // int | The unique identifier of the submitter to end the list with. It allows you to receive only submitters with id less than the specified value.
 
 try {
-    $result = $apiInstance->getSubmitters($submission_id, $q, $external_id, $limit, $before, $after);
+    $result = $apiInstance->getSubmitters($submission_id, $q, $completed_after, $completed_before, $external_id, $limit, $after, $before);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubmittersApi->getSubmitters: ', $e->getMessage(), PHP_EOL;
@@ -119,12 +121,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **submission_id** | **int**| The unique identifier of the submission. Allows to receive only submitters for a submission. | [optional] |
+| **submission_id** | **int**| The submission ID allows you to receive only the submitters related to that specific submission. | [optional] |
 | **q** | **string**| Filter submitters on name, email or phone partial match. | [optional] |
-| **external_id** | **string**| The unique applications-specific identifier provided for a submitter when initializing a signature request. Allows to receive only submitters with a specified external id. | [optional] |
+| **completed_after** | **\DateTime**| The date and time string value to filter submitters that completed the submission after the specified date and time. | [optional] |
+| **completed_before** | **\DateTime**| The date and time string value to filter submitters that completed the submission before the specified date and time. | [optional] |
+| **external_id** | **string**| The unique applications-specific identifier provided for a submitter when initializing a signature request. It allows you to receive only submitters with a specified external id. | [optional] |
 | **limit** | **int**| The number of submitters to return. Default value is 10. Maximum value is 100. | [optional] |
-| **before** | **int**| The unique identifier of the submitter to end the list with. Allows to receive only submitters with id less than the specified value. | [optional] |
-| **after** | **int**| The unique identifier of the submitter to start the list from. Allows to receive only submitters with id greater than the specified value. | [optional] |
+| **after** | **int**| The unique identifier of the submitter to start the list from. It allows you to receive only submitters with id greater than the specified value. Pass ID value from the &#x60;pagination.next&#x60; response to load the next batch of submitters. | [optional] |
+| **before** | **int**| The unique identifier of the submitter to end the list with. It allows you to receive only submitters with id less than the specified value. | [optional] |
 
 ### Return type
 
@@ -151,7 +155,7 @@ updateSubmitter($id, $update_submitter_request): \Docuseal\Model\UpdateSubmitter
 
 Update a submitter
 
-The API endpoint provides allows to update submitter details, field values and re-send emails.<br><b>Related Guides</b><br><a href=\"https://www.docuseal.co/guides/pre-fill-pdf-document-form-fields-with-api#automatically_sign_documents_via_api\" class=\"link\">Automatically sign documents via API</a>
+The API endpoint provides allows you to update submitter details, pre-fill or update field values and re-send emails.<br><b>Related Guides</b><br><a href=\"https://www.docuseal.co/guides/pre-fill-pdf-document-form-fields-with-api#automatically_sign_documents_via_api\" class=\"link\">Automatically sign documents via API</a>
 
 ### Example
 

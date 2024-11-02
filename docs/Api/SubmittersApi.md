@@ -155,7 +155,7 @@ updateSubmitter($id, $update_submitter_request): \Docuseal\Model\UpdateSubmitter
 
 Update a submitter
 
-The API endpoint provides allows you to update submitter details, pre-fill or update field values and re-send emails.<br><b>Related Guides</b><br><a href=\"https://www.docuseal.co/guides/pre-fill-pdf-document-form-fields-with-api#automatically_sign_documents_via_api\" class=\"link\">Automatically sign documents via API</a>
+The API endpoint provides allows you to update submitter details, pre-fill or update field values and re-send emails.<br><b>Related Guides</b><br><a href=\"https://www.docuseal.com/guides/pre-fill-pdf-document-form-fields-with-api#automatically_sign_documents_via_api\" class=\"link\">Automatically sign documents via API</a>
 
 ### Example
 

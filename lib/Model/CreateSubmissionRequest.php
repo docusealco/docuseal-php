@@ -396,7 +396,7 @@ class CreateSubmissionRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets template_id
      *
-     * @param int $template_id The unique identifier of the template. Document template forms can be created via the Web UI, <a href=\"https://www.docuseal.co/guides/use-embedded-text-field-tags-in-the-pdf-to-create-a-fillable-form\" class=\"link\">PDF and DOCX API</a>, or <a href=\"https://www.docuseal.co/guides/create-pdf-document-fillable-form-with-html-api\" class=\"link\">HTML API</a>.
+     * @param int $template_id The unique identifier of the template. Document template forms can be created via the Web UI, <a href=\"https://www.docuseal.com/guides/use-embedded-text-field-tags-in-the-pdf-to-create-a-fillable-form\" class=\"link\">PDF and DOCX API</a>, or <a href=\"https://www.docuseal.com/guides/create-pdf-document-fillable-form-with-html-api\" class=\"link\">HTML API</a>.
      *
      * @return self
      */

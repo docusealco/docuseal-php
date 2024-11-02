@@ -2,7 +2,7 @@
 
 DocuSeal API specs
 
-For more information, please visit [https://www.docuseal.co](https://www.docuseal.co).
+For more information, please visit [https://www.docuseal.com](https://www.docuseal.com).
 
 ## Installation & Usage
 

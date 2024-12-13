@@ -323,7 +323,7 @@ class CreateTemplateFromDocxRequestDocumentsInner implements ModelInterface, Arr
     /**
      * Sets name
      *
-     * @param string $name Name of the document
+     * @param string $name Name of the document.
      *
      * @return self
      */

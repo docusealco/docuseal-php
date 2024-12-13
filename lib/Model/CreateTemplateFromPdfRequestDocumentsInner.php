@@ -60,7 +60,8 @@ class CreateTemplateFromPdfRequestDocumentsInner implements ModelInterface, Arra
     protected static $openAPITypes = [
         'name' => 'string',
         'file' => 'string',
-        'fields' => '\Docuseal\Model\CreateTemplateFromPdfRequestDocumentsInnerFieldsInner[]'
+        'fields' => '\Docuseal\Model\CreateTemplateFromPdfRequestDocumentsInnerFieldsInner[]',
+        'flatten' => 'bool'
     ];
 
     /**
@@ -73,7 +74,8 @@ class CreateTemplateFromPdfRequestDocumentsInner implements ModelInterface, Arra
     protected static $openAPIFormats = [
         'name' => null,
         'file' => 'base64',
-        'fields' => null
+        'fields' => null,
+        'flatten' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class CreateTemplateFromPdfRequestDocumentsInner implements ModelInterface, Arra
     protected static array $openAPINullables = [
         'name' => false,
         'file' => false,
-        'fields' => false
+        'fields' => false,
+        'flatten' => false
     ];
 
     /**
@@ -175,7 +178,8 @@ class CreateTemplateFromPdfRequestDocumentsInner implements ModelInterface, Arra
     protected static $attributeMap = [
         'name' => 'name',
         'file' => 'file',
-        'fields' => 'fields'
+        'fields' => 'fields',
+        'flatten' => 'flatten'
     ];
 
     /**
@@ -186,7 +190,8 @@ class CreateTemplateFromPdfRequestDocumentsInner implements ModelInterface, Arra
     protected static $setters = [
         'name' => 'setName',
         'file' => 'setFile',
-        'fields' => 'setFields'
+        'fields' => 'setFields',
+        'flatten' => 'setFlatten'
     ];
 
     /**
@@ -197,7 +202,8 @@ class CreateTemplateFromPdfRequestDocumentsInner implements ModelInterface, Arra
     protected static $getters = [
         'name' => 'getName',
         'file' => 'getFile',
-        'fields' => 'getFields'
+        'fields' => 'getFields',
+        'flatten' => 'getFlatten'
     ];
 
     /**
@@ -260,6 +266,7 @@ class CreateTemplateFromPdfRequestDocumentsInner implements ModelInterface, Arra
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('file', $data ?? [], null);
         $this->setIfExists('fields', $data ?? [], null);
+        $this->setIfExists('flatten', $data ?? [], false);
     }
 
     /**
@@ -323,7 +330,7 @@ class CreateTemplateFromPdfRequestDocumentsInner implements ModelInterface, Arra
     /**
      * Sets name
      *
-     * @param string $name Name of the document
+     * @param string $name Name of the document.
      *
      * @return self
      */
@@ -350,7 +357,7 @@ class CreateTemplateFromPdfRequestDocumentsInner implements ModelInterface, Arra
     /**
      * Sets file
      *
-     * @param string $file Base64-encoded content of the PDF file or downloadable file URL
+     * @param string $file Base64-encoded content of the PDF file or downloadable file URL.
      *
      * @return self
      */
@@ -387,6 +394,33 @@ class CreateTemplateFromPdfRequestDocumentsInner implements ModelInterface, Arra
             throw new \InvalidArgumentException('non-nullable fields cannot be null');
         }
         $this->container['fields'] = $fields;
+
+        return $this;
+    }
+
+    /**
+     * Gets flatten
+     *
+     * @return bool|null
+     */
+    public function getFlatten()
+    {
+        return $this->container['flatten'];
+    }
+
+    /**
+     * Sets flatten
+     *
+     * @param bool|null $flatten Remove PDF form fields from the document.
+     *
+     * @return self
+     */
+    public function setFlatten($flatten)
+    {
+        if (is_null($flatten)) {
+            throw new \InvalidArgumentException('non-nullable flatten cannot be null');
+        }
+        $this->container['flatten'] = $flatten;
 
         return $this;
     }

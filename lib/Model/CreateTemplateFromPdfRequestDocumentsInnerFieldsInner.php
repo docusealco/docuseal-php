@@ -61,7 +61,8 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInner implements ModelInte
         'name' => 'string',
         'role' => 'string',
         'type' => 'string',
-        'areas' => '\Docuseal\Model\CreateTemplateFromPdfRequestDocumentsInnerFieldsInnerAreasInner[]'
+        'areas' => '\Docuseal\Model\CreateTemplateFromPdfRequestDocumentsInnerFieldsInnerAreasInner[]',
+        'options' => 'int[]'
     ];
 
     /**
@@ -75,7 +76,8 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInner implements ModelInte
         'name' => null,
         'role' => null,
         'type' => null,
-        'areas' => null
+        'areas' => null,
+        'options' => null
     ];
 
     /**
@@ -87,7 +89,8 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInner implements ModelInte
         'name' => false,
         'role' => false,
         'type' => false,
-        'areas' => false
+        'areas' => false,
+        'options' => false
     ];
 
     /**
@@ -179,7 +182,8 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInner implements ModelInte
         'name' => 'name',
         'role' => 'role',
         'type' => 'type',
-        'areas' => 'areas'
+        'areas' => 'areas',
+        'options' => 'options'
     ];
 
     /**
@@ -191,7 +195,8 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInner implements ModelInte
         'name' => 'setName',
         'role' => 'setRole',
         'type' => 'setType',
-        'areas' => 'setAreas'
+        'areas' => 'setAreas',
+        'options' => 'setOptions'
     ];
 
     /**
@@ -203,7 +208,8 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInner implements ModelInte
         'name' => 'getName',
         'role' => 'getRole',
         'type' => 'getType',
-        'areas' => 'getAreas'
+        'areas' => 'getAreas',
+        'options' => 'getOptions'
     ];
 
     /**
@@ -306,6 +312,7 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInner implements ModelInte
         $this->setIfExists('role', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('areas', $data ?? [], null);
+        $this->setIfExists('options', $data ?? [], null);
     }
 
     /**
@@ -372,7 +379,7 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInner implements ModelInte
     /**
      * Sets name
      *
-     * @param string|null $name Name of the field
+     * @param string|null $name Name of the field.
      *
      * @return self
      */
@@ -399,7 +406,7 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInner implements ModelInte
     /**
      * Sets role
      *
-     * @param string|null $role Role name of the signer
+     * @param string|null $role Role name of the signer.
      *
      * @return self
      */
@@ -426,7 +433,7 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInner implements ModelInte
     /**
      * Sets type
      *
-     * @param string|null $type Type of the field (e.g., text, signature, date, initials)
+     * @param string|null $type Type of the field (e.g., text, signature, date, initials).
      *
      * @return self
      */
@@ -473,6 +480,33 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInner implements ModelInte
             throw new \InvalidArgumentException('non-nullable areas cannot be null');
         }
         $this->container['areas'] = $areas;
+
+        return $this;
+    }
+
+    /**
+     * Gets options
+     *
+     * @return int[]|null
+     */
+    public function getOptions()
+    {
+        return $this->container['options'];
+    }
+
+    /**
+     * Sets options
+     *
+     * @param int[]|null $options An array of option values for 'select' field type.
+     *
+     * @return self
+     */
+    public function setOptions($options)
+    {
+        if (is_null($options)) {
+            throw new \InvalidArgumentException('non-nullable options cannot be null');
+        }
+        $this->container['options'] = $options;
 
         return $this;
     }

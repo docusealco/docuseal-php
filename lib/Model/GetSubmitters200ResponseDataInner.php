@@ -76,7 +76,7 @@ class GetSubmitters200ResponseDataInner implements ModelInterface, ArrayAccess, 
         'preferences' => 'object',
         'metadata' => 'object',
         'submission_events' => '\Docuseal\Model\GetSubmitters200ResponseDataInnerSubmissionEventsInner[]',
-        'values' => '\Docuseal\Model\GetSubmission200ResponseSubmittersInnerValuesInner[]',
+        'values' => '\Docuseal\Model\CreateSubmission200ResponseInnerValuesInner[]',
         'documents' => '\Docuseal\Model\GetSubmission200ResponseSubmittersInnerDocumentsInner[]',
         'role' => 'string'
     ];
@@ -919,7 +919,7 @@ class GetSubmitters200ResponseDataInner implements ModelInterface, ArrayAccess, 
     /**
      * Gets values
      *
-     * @return \Docuseal\Model\GetSubmission200ResponseSubmittersInnerValuesInner[]|null
+     * @return \Docuseal\Model\CreateSubmission200ResponseInnerValuesInner[]|null
      */
     public function getValues()
     {
@@ -929,7 +929,7 @@ class GetSubmitters200ResponseDataInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets values
      *
-     * @param \Docuseal\Model\GetSubmission200ResponseSubmittersInnerValuesInner[]|null $values An array of pre-filled values for the submission.
+     * @param \Docuseal\Model\CreateSubmission200ResponseInnerValuesInner[]|null $values An array of pre-filled values for the submission.
      *
      * @return self
      */

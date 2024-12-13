@@ -340,7 +340,7 @@ class CreateTemplateFromHtmlRequestDocumentsInner implements ModelInterface, Arr
     /**
      * Sets name
      *
-     * @param string|null $name Template name. Random uuid will be assigned when not specified.
+     * @param string|null $name Document name. Random uuid will be assigned when not specified.
      *
      * @return self
      */

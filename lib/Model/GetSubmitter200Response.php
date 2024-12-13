@@ -77,7 +77,7 @@ class GetSubmitter200Response implements ModelInterface, ArrayAccess, \JsonSeria
         'preferences' => 'object',
         'template' => '\Docuseal\Model\GetSubmitter200ResponseTemplate',
         'submission_events' => '\Docuseal\Model\GetSubmission200ResponseSubmissionEventsInner[]',
-        'values' => '\Docuseal\Model\GetSubmission200ResponseSubmittersInnerValuesInner[]',
+        'values' => '\Docuseal\Model\CreateSubmission200ResponseInnerValuesInner[]',
         'documents' => '\Docuseal\Model\GetSubmission200ResponseSubmittersInnerDocumentsInner[]',
         'role' => 'string'
     ];
@@ -953,7 +953,7 @@ class GetSubmitter200Response implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets values
      *
-     * @return \Docuseal\Model\GetSubmission200ResponseSubmittersInnerValuesInner[]|null
+     * @return \Docuseal\Model\CreateSubmission200ResponseInnerValuesInner[]|null
      */
     public function getValues()
     {
@@ -963,7 +963,7 @@ class GetSubmitter200Response implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets values
      *
-     * @param \Docuseal\Model\GetSubmission200ResponseSubmittersInnerValuesInner[]|null $values An array of pre-filled values for the submission.
+     * @param \Docuseal\Model\CreateSubmission200ResponseInnerValuesInner[]|null $values An array of pre-filled values for the submission.
      *
      * @return self
      */

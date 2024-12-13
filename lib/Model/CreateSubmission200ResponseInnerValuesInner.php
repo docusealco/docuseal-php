@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateTemplateFromDocxRequestDocumentsInnerFieldsInner
+ * CreateSubmission200ResponseInnerValuesInner
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Docuseal\ObjectSerializer;
 
 /**
- * CreateTemplateFromDocxRequestDocumentsInnerFieldsInner Class Doc Comment
+ * CreateSubmission200ResponseInnerValuesInner Class Doc Comment
  *
  * @category Class
  * @package  Docuseal
@@ -41,7 +41,7 @@ use \Docuseal\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CreateTemplateFromDocxRequestDocumentsInnerFieldsInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class CreateSubmission200ResponseInnerValuesInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInner implements ModelInt
       *
       * @var string
       */
-    protected static $openAPIModelName = 'createTemplateFromDocx_request_documents_inner_fields_inner';
+    protected static $openAPIModelName = 'createSubmission_200_response_inner_values_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,11 +58,8 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInner implements ModelInt
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'role' => 'string',
-        'type' => 'string',
-        'areas' => '\Docuseal\Model\CreateTemplateFromDocxRequestDocumentsInnerFieldsInnerAreasInner[]',
-        'options' => 'int[]'
+        'field' => 'string',
+        'value' => 'string'
     ];
 
     /**
@@ -73,11 +70,8 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInner implements ModelInt
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'role' => null,
-        'type' => null,
-        'areas' => null,
-        'options' => null
+        'field' => null,
+        'value' => null
     ];
 
     /**
@@ -86,11 +80,8 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInner implements ModelInt
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'name' => false,
-        'role' => false,
-        'type' => false,
-        'areas' => false,
-        'options' => false
+        'field' => false,
+        'value' => false
     ];
 
     /**
@@ -179,11 +170,8 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInner implements ModelInt
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'role' => 'role',
-        'type' => 'type',
-        'areas' => 'areas',
-        'options' => 'options'
+        'field' => 'field',
+        'value' => 'value'
     ];
 
     /**
@@ -192,11 +180,8 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInner implements ModelInt
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'role' => 'setRole',
-        'type' => 'setType',
-        'areas' => 'setAreas',
-        'options' => 'setOptions'
+        'field' => 'setField',
+        'value' => 'setValue'
     ];
 
     /**
@@ -205,11 +190,8 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInner implements ModelInt
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'role' => 'getRole',
-        'type' => 'getType',
-        'areas' => 'getAreas',
-        'options' => 'getOptions'
+        'field' => 'getField',
+        'value' => 'getValue'
     ];
 
     /**
@@ -253,45 +235,6 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInner implements ModelInt
         return self::$openAPIModelName;
     }
 
-    public const TYPE_TEXT = 'text';
-    public const TYPE_SIGNATURE = 'signature';
-    public const TYPE_INITIALS = 'initials';
-    public const TYPE_DATE = 'date';
-    public const TYPE_IMAGE = 'image';
-    public const TYPE_FILE = 'file';
-    public const TYPE_PAYMENT = 'payment';
-    public const TYPE_STAMP = 'stamp';
-    public const TYPE_SELECT = 'select';
-    public const TYPE_CHECKBOX = 'checkbox';
-    public const TYPE_MULTIPLE = 'multiple';
-    public const TYPE_RADIO = 'radio';
-    public const TYPE_CELLS = 'cells';
-    public const TYPE_PHONE = 'phone';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_TEXT,
-            self::TYPE_SIGNATURE,
-            self::TYPE_INITIALS,
-            self::TYPE_DATE,
-            self::TYPE_IMAGE,
-            self::TYPE_FILE,
-            self::TYPE_PAYMENT,
-            self::TYPE_STAMP,
-            self::TYPE_SELECT,
-            self::TYPE_CHECKBOX,
-            self::TYPE_MULTIPLE,
-            self::TYPE_RADIO,
-            self::TYPE_CELLS,
-            self::TYPE_PHONE,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -308,11 +251,8 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInner implements ModelInt
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('role', $data ?? [], null);
-        $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('areas', $data ?? [], null);
-        $this->setIfExists('options', $data ?? [], null);
+        $this->setIfExists('field', $data ?? [], null);
+        $this->setIfExists('value', $data ?? [], null);
     }
 
     /**
@@ -342,15 +282,6 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInner implements ModelInt
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'type', must be one of '%s'",
-                $this->container['type'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -367,146 +298,55 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInner implements ModelInt
 
 
     /**
-     * Gets name
+     * Gets field
      *
      * @return string|null
      */
-    public function getName()
+    public function getField()
     {
-        return $this->container['name'];
+        return $this->container['field'];
     }
 
     /**
-     * Sets name
+     * Sets field
      *
-     * @param string|null $name Name of the field.
+     * @param string|null $field Document template field name.
      *
      * @return self
      */
-    public function setName($name)
+    public function setField($field)
     {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+        if (is_null($field)) {
+            throw new \InvalidArgumentException('non-nullable field cannot be null');
         }
-        $this->container['name'] = $name;
+        $this->container['field'] = $field;
 
         return $this;
     }
 
     /**
-     * Gets role
+     * Gets value
      *
      * @return string|null
      */
-    public function getRole()
+    public function getValue()
     {
-        return $this->container['role'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets role
+     * Sets value
      *
-     * @param string|null $role Role name of the signer.
+     * @param string|null $value Pre-filled value of the field.
      *
      * @return self
      */
-    public function setRole($role)
+    public function setValue($value)
     {
-        if (is_null($role)) {
-            throw new \InvalidArgumentException('non-nullable role cannot be null');
+        if (is_null($value)) {
+            throw new \InvalidArgumentException('non-nullable value cannot be null');
         }
-        $this->container['role'] = $role;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string|null $type Type of the field (e.g., text, signature, date, initials).
-     *
-     * @return self
-     */
-    public function setType($type)
-    {
-        if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
-        }
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'type', must be one of '%s'",
-                    $type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets areas
-     *
-     * @return \Docuseal\Model\CreateTemplateFromDocxRequestDocumentsInnerFieldsInnerAreasInner[]|null
-     */
-    public function getAreas()
-    {
-        return $this->container['areas'];
-    }
-
-    /**
-     * Sets areas
-     *
-     * @param \Docuseal\Model\CreateTemplateFromDocxRequestDocumentsInnerFieldsInnerAreasInner[]|null $areas areas
-     *
-     * @return self
-     */
-    public function setAreas($areas)
-    {
-        if (is_null($areas)) {
-            throw new \InvalidArgumentException('non-nullable areas cannot be null');
-        }
-        $this->container['areas'] = $areas;
-
-        return $this;
-    }
-
-    /**
-     * Gets options
-     *
-     * @return int[]|null
-     */
-    public function getOptions()
-    {
-        return $this->container['options'];
-    }
-
-    /**
-     * Sets options
-     *
-     * @param int[]|null $options An array of option values for 'select' field type.
-     *
-     * @return self
-     */
-    public function setOptions($options)
-    {
-        if (is_null($options)) {
-            throw new \InvalidArgumentException('non-nullable options cannot be null');
-        }
-        $this->container['options'] = $options;
+        $this->container['value'] = $value;
 
         return $this;
     }

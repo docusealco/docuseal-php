@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** | Document template field name |
+**name** | **string** | Document template field name. |
 **description** | **string** | Description of the field to be displayed on the signing form. Can accept markdown. | [optional]
 **default_value** | **string** | Default value of the field. Use base64 encoded file or a public URL to the image file to set default signature or image fields. | [optional]
 **validation_pattern** | **string** | HTML field validation pattern string based on https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern specification. | [optional]

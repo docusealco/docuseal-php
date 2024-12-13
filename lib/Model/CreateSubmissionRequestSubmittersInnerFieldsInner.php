@@ -341,7 +341,7 @@ class CreateSubmissionRequestSubmittersInnerFieldsInner implements ModelInterfac
     /**
      * Sets name
      *
-     * @param string $name Document template field name
+     * @param string $name Document template field name.
      *
      * @return self
      */

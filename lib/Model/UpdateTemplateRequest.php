@@ -351,7 +351,7 @@ class UpdateTemplateRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets folder_name
      *
-     * @param string|null $folder_name The folder's name to which the template should be moved
+     * @param string|null $folder_name The folder's name to which the template should be moved.
      *
      * @return self
      */

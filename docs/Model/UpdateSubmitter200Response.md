@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **updated_at** | **string** | The date and time when the submitter was last updated. | [optional]
 **name** | **string** | Submitter name. | [optional]
 **phone** | **string** | Submitter phone number. | [optional]
-**values** | [**\Docuseal\Model\GetSubmission200ResponseSubmittersInnerValuesInner[]**](GetSubmission200ResponseSubmittersInnerValuesInner.md) | An array of pre-filled values for the submission. | [optional]
+**values** | [**\Docuseal\Model\CreateSubmission200ResponseInnerValuesInner[]**](CreateSubmission200ResponseInnerValuesInner.md) | An array of pre-filled values for the submission. | [optional]
 **documents** | [**\Docuseal\Model\GetSubmission200ResponseSubmittersInnerDocumentsInner[]**](GetSubmission200ResponseSubmittersInnerDocumentsInner.md) | An array of documents that the submitter has to sign. | [optional]
 **role** | **string** | The role of the submitter in the signing process. | [optional]
 

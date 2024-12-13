@@ -334,7 +334,7 @@ class UpdateSubmitterRequestFieldsInner implements ModelInterface, ArrayAccess, 
     /**
      * Sets name
      *
-     * @param string $name Document template field name
+     * @param string $name Document template field name.
      *
      * @return self
      */

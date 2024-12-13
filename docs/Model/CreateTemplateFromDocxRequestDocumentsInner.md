@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** | Name of the document |
+**name** | **string** | Name of the document. |
 **file** | **string** | Base64-encoded content of the DOCX file or downloadable file URL |
 **fields** | [**\Docuseal\Model\CreateTemplateFromDocxRequestDocumentsInnerFieldsInner[]**](CreateTemplateFromDocxRequestDocumentsInnerFieldsInner.md) | Fields are optional if you use {{...}} text tags to define fields in the document. | [optional]
 

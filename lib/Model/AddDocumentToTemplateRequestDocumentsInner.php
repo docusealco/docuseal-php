@@ -446,7 +446,7 @@ class AddDocumentToTemplateRequestDocumentsInner implements ModelInterface, Arra
     /**
      * Sets replace
      *
-     * @param bool|null $replace Set to `true` to replace existing document with a new file at `position`. Existing document fields will be transferred to the new document if it doesn't contain any fields
+     * @param bool|null $replace Set to `true` to replace existing document with a new file at `position`. Existing document fields will be transferred to the new document if it doesn't contain any fields.
      *
      * @return self
      */

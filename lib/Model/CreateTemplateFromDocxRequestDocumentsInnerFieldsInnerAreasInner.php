@@ -62,7 +62,8 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInnerAreasInner implement
         'y' => 'float',
         'w' => 'float',
         'h' => 'float',
-        'page' => 'int'
+        'page' => 'int',
+        'option' => 'string'
     ];
 
     /**
@@ -77,7 +78,8 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInnerAreasInner implement
         'y' => null,
         'w' => null,
         'h' => null,
-        'page' => null
+        'page' => null,
+        'option' => null
     ];
 
     /**
@@ -90,7 +92,8 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInnerAreasInner implement
         'y' => false,
         'w' => false,
         'h' => false,
-        'page' => false
+        'page' => false,
+        'option' => false
     ];
 
     /**
@@ -183,7 +186,8 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInnerAreasInner implement
         'y' => 'y',
         'w' => 'w',
         'h' => 'h',
-        'page' => 'page'
+        'page' => 'page',
+        'option' => 'option'
     ];
 
     /**
@@ -196,7 +200,8 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInnerAreasInner implement
         'y' => 'setY',
         'w' => 'setW',
         'h' => 'setH',
-        'page' => 'setPage'
+        'page' => 'setPage',
+        'option' => 'setOption'
     ];
 
     /**
@@ -209,7 +214,8 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInnerAreasInner implement
         'y' => 'getY',
         'w' => 'getW',
         'h' => 'getH',
-        'page' => 'getPage'
+        'page' => 'getPage',
+        'option' => 'getOption'
     ];
 
     /**
@@ -274,6 +280,7 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInnerAreasInner implement
         $this->setIfExists('w', $data ?? [], null);
         $this->setIfExists('h', $data ?? [], null);
         $this->setIfExists('page', $data ?? [], null);
+        $this->setIfExists('option', $data ?? [], null);
     }
 
     /**
@@ -331,7 +338,7 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInnerAreasInner implement
     /**
      * Sets x
      *
-     * @param float|null $x X-coordinate of the field area
+     * @param float|null $x X-coordinate of the field area.
      *
      * @return self
      */
@@ -358,7 +365,7 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInnerAreasInner implement
     /**
      * Sets y
      *
-     * @param float|null $y Y-coordinate of the field area
+     * @param float|null $y Y-coordinate of the field area.
      *
      * @return self
      */
@@ -385,7 +392,7 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInnerAreasInner implement
     /**
      * Sets w
      *
-     * @param float|null $w Width of the field area
+     * @param float|null $w Width of the field area.
      *
      * @return self
      */
@@ -412,7 +419,7 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInnerAreasInner implement
     /**
      * Sets h
      *
-     * @param float|null $h Height of the field area
+     * @param float|null $h Height of the field area.
      *
      * @return self
      */
@@ -449,6 +456,33 @@ class CreateTemplateFromDocxRequestDocumentsInnerFieldsInnerAreasInner implement
             throw new \InvalidArgumentException('non-nullable page cannot be null');
         }
         $this->container['page'] = $page;
+
+        return $this;
+    }
+
+    /**
+     * Gets option
+     *
+     * @return string|null
+     */
+    public function getOption()
+    {
+        return $this->container['option'];
+    }
+
+    /**
+     * Sets option
+     *
+     * @param string|null $option Option string value for 'radio' and 'multiple' select field types.
+     *
+     * @return self
+     */
+    public function setOption($option)
+    {
+        if (is_null($option)) {
+            throw new \InvalidArgumentException('non-nullable option cannot be null');
+        }
+        $this->container['option'] = $option;
 
         return $this;
     }

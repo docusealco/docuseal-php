@@ -1,10 +1,10 @@
-# # CreateTemplateFromHtmlRequestDocumentsInner
+# # CreateSubmission200ResponseInnerValuesInner
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**html** | **string** | HTML template with field tags. |
-**name** | **string** | Document name. Random uuid will be assigned when not specified. | [optional]
+**field** | **string** | Document template field name. | [optional]
+**value** | **string** | Pre-filled value of the field. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

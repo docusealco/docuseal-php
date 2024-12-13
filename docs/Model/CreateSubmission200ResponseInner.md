@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Submitter unique ID number. | [optional]
 **submission_id** | **int** | Submission UUID. | [optional]
-**uuid** | **string** | Submitter UUID | [optional]
+**uuid** | **string** | Submitter UUID. | [optional]
 **email** | **string** | The email address of the submitter. | [optional]
 **slug** | **string** | Unique key to be used in the signing form URL. | [optional]
-**values** | **object** | An array of objects with pre-filled values for the submission. Use field names for keys of the object. | [optional]
+**values** | [**\Docuseal\Model\CreateSubmission200ResponseInnerValuesInner[]**](CreateSubmission200ResponseInnerValuesInner.md) | An array of pre-filled values for the submission. | [optional]
 **metadata** | **object** |  | [optional]
 **ua** | **string** | User agent string of the submitter. | [optional]
 **ip** | **string** | IP address of the submitter. | [optional]

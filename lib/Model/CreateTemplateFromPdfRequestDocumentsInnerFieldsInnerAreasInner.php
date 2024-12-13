@@ -62,7 +62,8 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInnerAreasInner implements
         'y' => 'float',
         'w' => 'float',
         'h' => 'float',
-        'page' => 'int'
+        'page' => 'int',
+        'option' => 'string'
     ];
 
     /**
@@ -77,7 +78,8 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInnerAreasInner implements
         'y' => null,
         'w' => null,
         'h' => null,
-        'page' => null
+        'page' => null,
+        'option' => null
     ];
 
     /**
@@ -90,7 +92,8 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInnerAreasInner implements
         'y' => false,
         'w' => false,
         'h' => false,
-        'page' => false
+        'page' => false,
+        'option' => false
     ];
 
     /**
@@ -183,7 +186,8 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInnerAreasInner implements
         'y' => 'y',
         'w' => 'w',
         'h' => 'h',
-        'page' => 'page'
+        'page' => 'page',
+        'option' => 'option'
     ];
 
     /**
@@ -196,7 +200,8 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInnerAreasInner implements
         'y' => 'setY',
         'w' => 'setW',
         'h' => 'setH',
-        'page' => 'setPage'
+        'page' => 'setPage',
+        'option' => 'setOption'
     ];
 
     /**
@@ -209,7 +214,8 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInnerAreasInner implements
         'y' => 'getY',
         'w' => 'getW',
         'h' => 'getH',
-        'page' => 'getPage'
+        'page' => 'getPage',
+        'option' => 'getOption'
     ];
 
     /**
@@ -274,6 +280,7 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInnerAreasInner implements
         $this->setIfExists('w', $data ?? [], null);
         $this->setIfExists('h', $data ?? [], null);
         $this->setIfExists('page', $data ?? [], null);
+        $this->setIfExists('option', $data ?? [], null);
     }
 
     /**
@@ -346,7 +353,7 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInnerAreasInner implements
     /**
      * Sets x
      *
-     * @param float $x X-coordinate of the field area
+     * @param float $x X-coordinate of the field area.
      *
      * @return self
      */
@@ -373,7 +380,7 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInnerAreasInner implements
     /**
      * Sets y
      *
-     * @param float $y Y-coordinate of the field area
+     * @param float $y Y-coordinate of the field area.
      *
      * @return self
      */
@@ -400,7 +407,7 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInnerAreasInner implements
     /**
      * Sets w
      *
-     * @param float $w Width of the field area
+     * @param float $w Width of the field area.
      *
      * @return self
      */
@@ -427,7 +434,7 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInnerAreasInner implements
     /**
      * Sets h
      *
-     * @param float $h Height of the field area
+     * @param float $h Height of the field area.
      *
      * @return self
      */
@@ -464,6 +471,33 @@ class CreateTemplateFromPdfRequestDocumentsInnerFieldsInnerAreasInner implements
             throw new \InvalidArgumentException('non-nullable page cannot be null');
         }
         $this->container['page'] = $page;
+
+        return $this;
+    }
+
+    /**
+     * Gets option
+     *
+     * @return string|null
+     */
+    public function getOption()
+    {
+        return $this->container['option'];
+    }
+
+    /**
+     * Sets option
+     *
+     * @param string|null $option Option string value for 'radio' and 'multiple' select field types.
+     *
+     * @return self
+     */
+    public function setOption($option)
+    {
+        if (is_null($option)) {
+            throw new \InvalidArgumentException('non-nullable option cannot be null');
+        }
+        $this->container['option'] = $option;
 
         return $this;
     }

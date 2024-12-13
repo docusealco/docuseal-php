@@ -13,6 +13,7 @@ docs/Model/ArchiveTemplate200Response.md
 docs/Model/CloneTemplateRequest.md
 docs/Model/CreateSubmission200ResponseInner.md
 docs/Model/CreateSubmission200ResponseInnerPreferences.md
+docs/Model/CreateSubmission200ResponseInnerValuesInner.md
 docs/Model/CreateSubmissionRequest.md
 docs/Model/CreateSubmissionRequestMessage.md
 docs/Model/CreateSubmissionRequestSubmittersInner.md
@@ -32,7 +33,6 @@ docs/Model/GetSubmission200Response.md
 docs/Model/GetSubmission200ResponseSubmissionEventsInner.md
 docs/Model/GetSubmission200ResponseSubmittersInner.md
 docs/Model/GetSubmission200ResponseSubmittersInnerDocumentsInner.md
-docs/Model/GetSubmission200ResponseSubmittersInnerValuesInner.md
 docs/Model/GetSubmissions200Response.md
 docs/Model/GetSubmissions200ResponseDataInner.md
 docs/Model/GetSubmissions200ResponseDataInnerCreatedByUser.md
@@ -74,6 +74,7 @@ lib/Model/ArchiveTemplate200Response.php
 lib/Model/CloneTemplateRequest.php
 lib/Model/CreateSubmission200ResponseInner.php
 lib/Model/CreateSubmission200ResponseInnerPreferences.php
+lib/Model/CreateSubmission200ResponseInnerValuesInner.php
 lib/Model/CreateSubmissionRequest.php
 lib/Model/CreateSubmissionRequestMessage.php
 lib/Model/CreateSubmissionRequestSubmittersInner.php
@@ -93,7 +94,6 @@ lib/Model/GetSubmission200Response.php
 lib/Model/GetSubmission200ResponseSubmissionEventsInner.php
 lib/Model/GetSubmission200ResponseSubmittersInner.php
 lib/Model/GetSubmission200ResponseSubmittersInnerDocumentsInner.php
-lib/Model/GetSubmission200ResponseSubmittersInnerValuesInner.php
 lib/Model/GetSubmissions200Response.php
 lib/Model/GetSubmissions200ResponseDataInner.php
 lib/Model/GetSubmissions200ResponseDataInnerCreatedByUser.php

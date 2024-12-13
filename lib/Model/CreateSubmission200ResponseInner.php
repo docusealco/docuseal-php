@@ -63,7 +63,7 @@ class CreateSubmission200ResponseInner implements ModelInterface, ArrayAccess, \
         'uuid' => 'string',
         'email' => 'string',
         'slug' => 'string',
-        'values' => 'object',
+        'values' => '\Docuseal\Model\CreateSubmission200ResponseInnerValuesInner[]',
         'metadata' => 'object',
         'ua' => 'string',
         'ip' => 'string',
@@ -483,7 +483,7 @@ class CreateSubmission200ResponseInner implements ModelInterface, ArrayAccess, \
     /**
      * Sets uuid
      *
-     * @param string|null $uuid Submitter UUID
+     * @param string|null $uuid Submitter UUID.
      *
      * @return self
      */
@@ -554,7 +554,7 @@ class CreateSubmission200ResponseInner implements ModelInterface, ArrayAccess, \
     /**
      * Gets values
      *
-     * @return object|null
+     * @return \Docuseal\Model\CreateSubmission200ResponseInnerValuesInner[]|null
      */
     public function getValues()
     {
@@ -564,7 +564,7 @@ class CreateSubmission200ResponseInner implements ModelInterface, ArrayAccess, \
     /**
      * Sets values
      *
-     * @param object|null $values An array of objects with pre-filled values for the submission. Use field names for keys of the object.
+     * @param \Docuseal\Model\CreateSubmission200ResponseInnerValuesInner[]|null $values An array of pre-filled values for the submission.
      *
      * @return self
      */

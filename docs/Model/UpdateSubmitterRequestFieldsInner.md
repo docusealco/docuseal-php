@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** | Document template field name |
+**name** | **string** | Document template field name. |
 **default_value** | **string** | Default value of the field. Use base64 encoded file or a public URL to the image file to set default signature or image fields. | [optional]
 **validation_pattern** | **string** | HTML field validation pattern string based on https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern specification. | [optional]
 **invalid_message** | **string** | A custom message to display on pattern validation failure. | [optional]

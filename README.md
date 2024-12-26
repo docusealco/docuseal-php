@@ -72,7 +72,7 @@ Provides the ability to retrieve a list of available submissions.
 
 
 ```php
-$docuseal->listSubmissions(["limit" => 10]);
+$docuseal->listSubmissions(['limit' => 10]);
 ```
 
 ### getSubmission(id)
@@ -143,7 +143,7 @@ Provides the ability to retrieve a list of submitters.
 
 
 ```php
-$docuseal->listSubmitters(["limit" => 10]);
+$docuseal->listSubmitters(['limit' => 10]);
 ```
 
 ### getSubmitter(id)
@@ -187,7 +187,7 @@ Provides the ability to retrieve a list of available document templates.
 
 
 ```php
-$docuseal->listTemplates(["limit" => 10]);
+$docuseal->listTemplates(['limit' => 10]);
 ```
 
 ### getTemplate(id)

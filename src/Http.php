@@ -58,7 +58,7 @@ class Http {
         return [
             'X-Auth-Token: ' . $this->config['key'],
             'Content-Type: application/json',
-            "User-Agent: DocuSeal PHP v" . DocuSeal::VERSION
+            "User-Agent: DocuSeal PHP v" . Docuseal::VERSION
         ];
     }
 

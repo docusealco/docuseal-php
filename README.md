@@ -86,6 +86,17 @@ Provides the functionality to retrieve information about a submission.
 $docuseal->getSubmission(1001);
 ```
 
+### getSubmissionDocuments(id)
+
+[Documentation](https://www.docuseal.com/docs/api?lang=php#get-submission-documents)
+
+This endpoint returns a list of partially filled documents for a submission. If the submission has been completed, the final signed documents are returned.
+
+
+```php
+$docuseal->getSubmissionDocuments(1001);
+```
+
 ### createSubmission(data)
 
 [Documentation](https://www.docuseal.com/docs/api?lang=php#create-a-submission)

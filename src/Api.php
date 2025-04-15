@@ -81,6 +81,11 @@ class Api
         return $this->http->get("/submissions/{$id}", $params);
     }
 
+    public function getSubmissionDocuments($id, $params = [])
+    {
+        return $this->http->get("/submissions/{$id}/documents", $params);
+    }
+
     public function createSubmission($data)
     {
         return $this->http->post('/submissions/init', $data);

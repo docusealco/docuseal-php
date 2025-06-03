@@ -96,6 +96,16 @@ class Api
         return $this->http->post('/submissions/emails', $data);
     }
 
+    public function createSubmissionFromPdf($data)
+    {
+        return $this->http->post('/submissions/pdf', $data);
+    }
+
+    public function createSubmissionFromHtml($data)
+    {
+        return $this->http->post('/submissions/html', $data);
+    }
+
     public function archiveSubmission($id)
     {
         return $this->http->delete("/submissions/{$id}");

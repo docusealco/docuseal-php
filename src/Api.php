@@ -88,7 +88,7 @@ class Api
 
     public function createSubmission($data)
     {
-        return $this->http->post('/submissions/init', $data);
+        return $this->http->post('/submissions', $data);
     }
 
     public function createSubmissionFromEmails($data)

@@ -106,6 +106,11 @@ class Api
         return $this->http->post('/submissions/html', $data);
     }
 
+    public function createSubmissionFromDocx($data)
+    {
+        return $this->http->post('/submissions/docx', $data);
+    }
+
     public function archiveSubmission($id)
     {
         return $this->http->delete("/submissions/{$id}");

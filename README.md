@@ -477,6 +477,22 @@ Allows you to archive a document template.
 $docuseal->archiveTemplate(1000001);
 ```
 
+### Verifying Webhook Signatures
+
+`\Docuseal\DocusealHelper::verifyWebhookSignature($secret, $signatureHeader, $payload, $tolerance = 300)` verifies that a webhook request was sent by DocuSeal. It checks the `X-Docuseal-Signature` header (format `<timestamp>.<signature>`), rejects timestamps outside the tolerance window (in seconds) to prevent replay attacks, and compares the HMAC-SHA256 signature of `<timestamp>.<raw body>` in constant time. It returns `true` if the signature is valid and `false` otherwise.
+
+Pass the raw request body exactly as received; do not decode and re-encode it.
+
+```php
+$payload = file_get_contents('php://input');
+$signature = isset($_SERVER['HTTP_X_DOCUSEAL_SIGNATURE']) ? $_SERVER['HTTP_X_DOCUSEAL_SIGNATURE'] : '';
+
+if (!\Docuseal\DocusealHelper::verifyWebhookSignature('WEBHOOK_SECRET', $signature, $payload)) {
+  http_response_code(401);
+  exit;
+}
+```
+
 ### Configuring Timeouts
 
 Set timeouts to avoid hanging requests:

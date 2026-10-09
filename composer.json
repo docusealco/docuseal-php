@@ -13,5 +13,7 @@
             "name": "DocuSeal"
         }
     ],
-    "require": {}
+    "require": {
+      "ext-ctype": "*"
+    }
 }
